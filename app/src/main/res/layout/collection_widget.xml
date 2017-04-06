@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="@dimen/collection_widget_margin">
+    <!-- Widget Outer Wrapper -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/widget_wrapper_background"
+        android:orientation="vertical">
+        <!-- Widget Header Wrapper -->
+        <LinearLayout
+            android:id="@+id/widget_layout_main"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/widget_header_background"
+            android:orientation="horizontal"
+            android:paddingEnd="@dimen/widget_header_padding_right"
+            android:paddingLeft="@dimen/widget_header_padding_left"
+            android:paddingRight="@dimen/widget_header_padding_right"
+            android:paddingStart="@dimen/widget_header_padding_left">
+
+            <ImageView
+                android:id="@+id/widget_img_launcher"
+                android:layout_width="@dimen/widget_layout_width"
+                android:layout_height="@dimen/widget_layout_height"
+                android:layout_gravity="center_vertical"
+                android:src="@mipmap/ic_launcher" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:paddingEnd="@dimen/widget_header_padding"
+                android:paddingLeft="@dimen/widget_header_padding"
+                android:paddingRight="@dimen/widget_header_padding"
+                android:paddingStart="@dimen/widget_header_padding"
+                android:text="@string/title_widget"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textColor="@android:color/black"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <ListView
+            android:id="@+id/widget_list"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    </LinearLayout>
+
+</FrameLayout>
