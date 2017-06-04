@@ -108,7 +108,7 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
             }
         }).attachToRecyclerView(stockRecyclerView);
 
-
+	setupWindowAnimations()
     }
 
     @Override
@@ -319,5 +319,14 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
         intent.putExtra(SYMBOL_DATA, symbol);
         startActivity(intent);
 
+    }
+	
+	   //set up transition
+    private void setupWindowAnimations() {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            Fade fade = new Fade();
+            fade.setDuration(700);
+            getWindow().setEnterTransition(fade);
+        }
     }
 }
