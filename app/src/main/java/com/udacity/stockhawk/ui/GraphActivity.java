@@ -53,7 +53,7 @@ public class GraphActivity extends AppCompatActivity {
         setContentView(R.layout.activity_graph);
         ButterKnife.bind(this);
 
-
+		setupWindowAnimations();
         Intent readSymbolIntent = getIntent();
 
         //Check if Intent has Extra and only then proceed with the processing
@@ -68,6 +68,15 @@ public class GraphActivity extends AppCompatActivity {
                 Toast.makeText(GraphActivity.this, message, Toast.LENGTH_LONG).show();
             }
 
+        }
+    }
+	
+	   //set up transition
+    private void setupWindowAnimations() {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            Fade fade = new Fade();
+            fade.setDuration(700);
+            getWindow().setEnterTransition(fade);
         }
     }
 
